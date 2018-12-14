@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="Code-chuyen-doi-tien-te.html" method="post">
+    Amount: <input type="number" id="amount" value="0" />
+    <select id= "FromCurrency">
+        <option value="VietNam">VietNam</option>
+        <option value="USD" selected>USD</option>
+    </select>
+    <select id= "ToCurrency">
+        <option value="USD">USD</option>
+        <option value="VietNam" selected>VietNam</option>
+    </select>
+    <input type="button" onclick="myFunction()" value="Submit" />
+</form>
+<script>
+    function myFunction() {
+        var am = document.getElementById('amount').value;
+        var fr = document.getElementById('FromCurrency').value;
+        var to = document.getElementById('ToCurrency').value;
+        var Result;
+        if (fr ==  "USD"&&to=="VietNam"){
+            Result = am * 23000 +  "VND";
+        } else if (fr =="USD"&&to=="USD"){
+            Result = am +  "USD";
+        } else if (fr =="VietNam"&&to=="USD"){
+            Result = am / 23000  +  "USD";
+        } else {
+            Result = am +  "VietNamDong";
+        }
+        alert(Result);
+    }
+</script>
+</body>
+</html>
